@@ -5,6 +5,9 @@ class usuari{
     public $username;
     public $password;
     public $email;
+    public $foto;
+    public $data;
+    public $rol;
 
     public function buscar(){
 
@@ -120,6 +123,66 @@ WHERE email='$email' and password='$password'";
     public function setPassword($password)
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of foto
+     */ 
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+
+    /**
+     * Set the value of foto
+     *
+     * @return  self
+     */ 
+    public function setFoto($foto)
+    {
+        $this->foto = $foto;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of data
+     */ 
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Set the value of data
+     *
+     * @return  self
+     */ 
+    public function setData($data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of rol
+     */ 
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    /**
+     * Set the value of rol
+     *
+     * @return  self
+     */ 
+    public function setRol($rol)
+    {
+        $this->rol = $rol;
 
         return $this;
     }
