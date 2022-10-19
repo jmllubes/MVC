@@ -1,4 +1,4 @@
-<form action="index.php?controller=usuari?action=actualitzar" method="post" 
+<form action="index.php?controller=usuari&action=actualitzar" method="post" 
 enctype="multipart/form-data">
 
 <img src="views/usuari/img/<?php echo $row["foto"];?>" width="50px" height="50px">

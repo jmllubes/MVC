@@ -47,14 +47,12 @@ class usuariController {
         $usuari->setUsername($_POST["username"]); //emplenar
         $usuari->setPassword($_POST["password"]);
         $usuari->setEmail($_SESSION["email"]);
-        copy($_FILES['foto']['tmp_name'], "fotos/". round(microtime(true) * 1000) . $_FILES['foto']['name']);
+        copy($_FILES['foto']['tmp_name'], "views/usuari/img/". round(microtime(true) * 1000) . $_FILES['foto']['name']);
         $nom = round(microtime(true) * 1000) . $_FILES['foto']['name'];
         $usuari->setFoto($nom);
         $usuari->setData($_POST["data"]);
-
-        $r = $usuari->buscar();
-        $row = $r->fetch_assoc();
-        require_once "views/usuari/perfil.php";
+        $usuari->actualitzar();
+        header("Location:index.php?controller=usuari&action=perfil");
 
     }
 

@@ -65,6 +65,22 @@ WHERE email='$email' and password='$password'";
     $mysql->close();
     return $resultado;
     }
+    public function actualitzar(){
+        $mysql=new mysqli("localhost","root","","login");   
+    if ($mysql->connect_error){
+        die('Problemas con la conexion a la base de datos');
+    }
+
+    $password = $this->getPassword();
+    $user = $this->getUsername();
+    $email = $this->getEmail();
+    $foto = $this->getFoto();
+    $data = $this->getData();
+    $sql = "UPDATE usuari SET username='$user',password='$password',foto='$foto',data_naixement='$data'
+     WHERE email = '$email'";
+    $mysql->query($sql); 
+    $mysql->close();
+    }
     
 
     /**
