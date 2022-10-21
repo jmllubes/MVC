@@ -46,9 +46,9 @@ class usuariController {
         $usuari = new usuari();
         $usuari->setUsername($_POST["username"]); //emplenar
         $usuari->setPassword($_POST["password"]);
-        $usuari->setEmail($_SESSION["email"]);
-        copy($_FILES['foto']['tmp_name'], "views/usuari/img/". round(microtime(true) * 1000) . $_FILES['foto']['name']);
-        $nom = round(microtime(true) * 1000) . $_FILES['foto']['name'];
+        $usuari->setEmail($_SESSION["email"]);        
+        $nom = round(microtime(true) * 1000) . $_FILES['foto']['name']; //guardo nom foto temps+nom
+        copy($_FILES['foto']['tmp_name'], "views/usuari/img/".$nom); // moc la foto a la carpeta
         $usuari->setFoto($nom);
         $usuari->setData($_POST["data"]);
         $usuari->actualitzar();
