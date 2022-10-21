@@ -22,23 +22,13 @@
 
   <!-- Navigation Bar -->
   <div class="navbar">
-    <a href="index.php?controller=usuari&action=perfil">Perfil usuari</a>
-    <a href="index.php?controller=producte&action=mostrar">Productes</a>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-    <a href="">
-      <form action="index.php" method="post">
-        <input type="submit" name="logout" value="logout">
-      </form>
-    </a>
+    <a class="nav-link" href="index.php?controller=usuari&action=perfil">Perfil usuari</a>
+    <a class="nav-link" href="index.php?controller=producte&action=mostrar">Productes</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="index.php?controller=usuari&action=logout">Logout</a>
+ 
   </div>
 
   <!-- The flexible grid (content) -->
 
 
-  <?php
-  if (isset($_POST["logout"])) { //destruir sessió
-    session_destroy();
-    header("Location:../index.php"); //redirigim a login
-
-  }  ?>

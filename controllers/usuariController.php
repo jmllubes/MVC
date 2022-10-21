@@ -55,6 +55,10 @@ class usuariController {
         header("Location:index.php?controller=usuari&action=perfil");
 
     }
+    public function logout(){
+        session_destroy();
+        header("Location:index.php");
+    }
 
 }
 
