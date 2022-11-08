@@ -16,6 +16,15 @@ class usuariController {
         
     }
 
+    public function mostrar(){
+
+        $usuari = new usuari();
+        $r= $usuari->mostrar(); //faci la consulta a la bd
+        require_once("views/usuari/mostrar.php");
+        
+    }
+
+
     public function register(){
         $usuari = new usuari(); //crea instancia
         $usuari->setUsername($_POST["txt"]); //emplenar

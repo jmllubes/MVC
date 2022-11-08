@@ -24,7 +24,7 @@
   <div class="navbar">
     <a class="nav-link" href="index.php?controller=usuari&action=perfil">Perfil usuari</a>
     <a class="nav-link" href="index.php?controller=producte&action=mostrar">Productes</a>
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="index.php?controller=usuari&action=mostrar">Filtre dinàmic</a>
     <a class="nav-link" href="index.php?controller=usuari&action=logout">Logout</a>
  
   </div>
