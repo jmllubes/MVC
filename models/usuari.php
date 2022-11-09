@@ -18,7 +18,7 @@ class usuari
         if ($mysql->connect_error) {
             die('Problemas con la conexion a la base de datos');
         }
-        $sql = "SELECT DISTINCT `rol`
+        $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol`
         FROM `usuari` ";
         $result = $mysql->query($sql);
         return $result;

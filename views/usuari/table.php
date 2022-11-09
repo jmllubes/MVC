@@ -2,9 +2,17 @@
         if ($mysql->connect_error) {
             die('Problemas con la conexion a la base de datos');
         }
-        $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol` 
-        FROM `usuari` WHERE rol = '" . $_GET["rol"] . "'";
+        if(isset($_GET["rol"])){
+            $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol` 
+            FROM `usuari` WHERE rol = '" . $_GET["rol"] . "'";
+            $r = $mysql->query($sql);
+        }
+        else{
+            $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol` 
+        FROM `usuari`";
         $r = $mysql->query($sql);
+        }
+        
 ?>
 <table class="table">
     <tr>

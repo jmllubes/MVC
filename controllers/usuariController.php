@@ -19,7 +19,8 @@ class usuariController {
     public function mostrar(){
 
         $usuari = new usuari();
-        $r= $usuari->mostrar(); //faci la consulta a la bd
+        $r= $usuari->mostrar(); //faci la consulta a la bdç
+        $rows = $r->fetch_all(MYSQLI_ASSOC);
         require_once("views/usuari/mostrar.php");
         
     }
