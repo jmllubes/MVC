@@ -17,7 +17,8 @@ class usuariController {
     }
 
     public function mostrar(){
-
+        unset($_SESSION["filtrerol"]);
+        unset($_SESSION["filtrefoto"]);
         $usuari = new usuari();
         $r= $usuari->mostrar(); //faci la consulta a la bdç
         $rows = $r->fetch_all(MYSQLI_ASSOC);

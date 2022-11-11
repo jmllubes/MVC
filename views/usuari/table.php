@@ -1,17 +1,28 @@
-<?php $mysql = new mysqli("localhost", "root", "", "login");
+<?php 
+@session_start();
+
+$mysql = new mysqli("localhost", "root", "", "login");
         if ($mysql->connect_error) {
             die('Problemas con la conexion a la base de datos');
         }
-        if(isset($_GET["rol"])){
-            $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol` 
-            FROM `usuari` WHERE rol = '" . $_GET["rol"] . "'";
-            $r = $mysql->query($sql);
+        $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol` 
+            FROM `usuari` WHERE";
+        if(isset($_GET["rol"])){ // views/usuari/table.php?rol=" + str -> quan seleccionem el filtre rol
+            $_SESSION["filtrerol"]=$_GET["rol"];
+        } 
+        if(isset($_GET["foto"])){ //views/usuari/table.php?foto=" + str -> quan seleccionem el filtre foto
+            $_SESSION["filtrefoto"]=$_GET["foto"];
         }
-        else{
-            $sql = "SELECT `username`, `password`, `email`, `foto`, `data_naixement`, `rol` 
-        FROM `usuari`";
+        if(isset($_SESSION["filtrerol"])){ // comprovo que s'ha aplicat algun cop el filtre de rol i concateno
+            $sql = $sql . " rol = '" . $_SESSION["filtrerol"] . "' AND ";
+        }
+        if(isset($_SESSION["filtrefoto"])){ // comprovo que s'ha aplicat algun cop el filtre de foto i
+            $sql = $sql . " foto = '" . $_SESSION["filtrefoto"] . "' AND ";
+        } 
+        $sql = $sql . " 1 ";
+        echo $sql;
         $r = $mysql->query($sql);
-        }
+        
         
 ?>
 <table class="table">
