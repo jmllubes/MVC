@@ -26,13 +26,12 @@
 }
   ?>
 </select>
-<div id="usuaris" class="msg"></div>
+<div id="usuaris" class="msg">
+<!-- taula d'usuaris que es genera per funció ajax-->
+</div>
 <script>
   function showCustomer(str) {
-    if (str == "") {
-      document.getElementById("usuaris").innerHTML = "";
-      return;
-    }
+    
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
       document.getElementById("usuaris").innerHTML = this.responseText;
@@ -44,10 +43,7 @@
 
 <script>
   function showFoto(str) {
-    if (str == "") {
-      document.getElementById("usuaris").innerHTML = "";
-      return;
-    }
+    
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
       document.getElementById("usuaris").innerHTML = this.responseText;
