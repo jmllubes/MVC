@@ -59,11 +59,10 @@ $mysql = new mysqli("localhost", "root", "", "login");
   <img class="card-img-top" src="views/usuari/img/<?php echo $row['foto'];?>" alt="Card image cap">
   <div class="card-body">
 	<h5 class="card-title"><?php echo $row['username'] . " -> " . $row['username'];?></h5>
-	<p class="card-text">Email: <?php echo $row['email'];?> €</p>
+	<p class="card-text">Email: <?php echo $row['email'];?> </p>
 	<p class="card-text">Data: <?php echo $row['data_naixement'];?></p>
-   
-	<a href="index.php?controller=vol&action=modificarvols&codi=<?php echo $row['rol'];?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
-	<a href="index.php?controller=vol&action=eliminarvols&codi=<?php echo $row['username'];?>" class="btn btn-primary"><i class="bi bi-trash"></i></a>
+   	<a href="index.php?controller=usuari&action=modificarvols&codi=<?php echo $row['rol'];?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+	<a href="index.php?controller=usuari&action=eliminarvols&codi=<?php echo $row['username'];?>" class="btn btn-primary"><i class="bi bi-trash"></i></a>
   <a href="index.php?controller=reserva&action=insertarreserves&codi=<?php echo $row['username'];?>" class="btn btn-primary"><i class="bi bi-calendar2-plus"></i></a>
   </div>
 </div>
